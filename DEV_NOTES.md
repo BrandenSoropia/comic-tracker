@@ -9,3 +9,6 @@ I want to try a refresh myself and enjoy programming again. I've been doing fron
 I chose Python because Figure 1 (current workplace) uses it. It helps that it's pretty simple syntactically and I'm slightly familiar with it from the school days. Also I discovered it comes with sqlite (according to Flask docs, it's good for small projects) so that helps with setting things up!
 
 However, I'm new to venv and package manager pip, The ideas are simple but I'm not going to touch them unless I have to! Also my OOP/Python game is weak, so that's going to have to level up too!
+
+## Dev 29, 2020
+venv is great. It's really nice to run my app in its own little world, and if the future, make it easier to switch between other Python projects. I just need to remember to run the app in a virtual environment first!

@@ -40,11 +40,14 @@ $ . venv/bin/activate
 1. Run `flask run` to start your server on `http://127.0.0.1:5000/`
 
 ## Running Tests
+Uses pytest.
+
+1. Just run `pytest` for a basic overview.
+    + For more verbose results, run `pytest -v`
 
 ## Building App
 
-Follow's Flask's doc which follows Python's standard distribution "wheel" file.
- python setup.py bdist_wheel.
+Follows Flask's doc which follows Python's standard distribution "wheel" file.
 
 1. Build by running `python setup.py bdist_wheel`
 1. Find in `/dist` with project name and version number!
