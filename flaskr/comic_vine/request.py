@@ -35,7 +35,10 @@ def send_cv_request(endpoint: str, user_agent:str, data: dict[str, any] = None ,
         if headers:
             _headers.update(headers)
 
+        print(params)
+
         r = requests.get(base_url + endpoint, params=params, headers=_headers)
+        print(r.url)
 
         return r
     except:
