@@ -1,7 +1,9 @@
 import os
 
 from flask import Flask
+from dotenv import load_dotenv
 
+load_dotenv()
 
 def create_app(test_config=None):
     # create and configure the app
@@ -32,12 +34,16 @@ def create_app(test_config=None):
     # Are imports within a function normal??
     from . import db
     db.init_app(app)
+    
+    # TODO: Delete this starter code.
+    # from . import auth
+    # app.register_blueprint(auth.bp)
 
-    from . import auth
-    app.register_blueprint(auth.bp)
+    # from . import blog
+    # app.register_blueprint(blog.bp)
+    # app.add_url_rule('/', endpoint='index')
 
-    from . import blog
-    app.register_blueprint(blog.bp)
-    app.add_url_rule('/', endpoint='index')
+    from . import comic
+    app.register_blueprint(comic.bp)
 
     return app

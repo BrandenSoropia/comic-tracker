@@ -12,6 +12,17 @@ I'm using VS Code and will include some project settings/extension recommendatio
 
 **Setup**
 
+
+1. Create an `.env` file in your local copy of the repo, and make sure it includes the following:
+
+```
+export FLASK_APP=flaskr
+export FLASK_ENV=development
+export COMIC_VINE_API_KEY=<your_secret_key>
+```
+
+You can get a Comic Vine API key here: https://comicvine.gamespot.com/api/ (Note: you'll need to sign up with them)
+
 1. Create a virtual environment using either:
 
 ```
@@ -35,7 +46,7 @@ $ . venv/bin/activate
 3. Install dependencies by `pip install -r requirements.txt`
 
 **Running Server**
-1. Source dev env variables by running `source .dev.env`
+1. Source dev env variables by running `source .env`
 1. Run `flask init-db` to clear and setup tables.
 1. Run `flask run` to start your server on `http://127.0.0.1:5000/`
 
