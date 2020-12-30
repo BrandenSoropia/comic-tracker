@@ -2,5 +2,9 @@
   "files.associations": {
     "*.html": "jinja-html"
   },
-  "editor.defaultFormatter": "ms-python.python"
+  "editor.defaultFormatter": "ms-python.python",
+  "editor.tabSize": 4,
+  "cSpell.words": [
+    "jsonify"
+  ]
 }

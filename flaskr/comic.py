@@ -5,36 +5,30 @@ from flask import (
     Blueprint, flash, g, redirect, render_template, request, url_for, jsonify
 )
 from werkzeug.exceptions import abort
-
 from flaskr.db import get_db
+
+from .comic_vine.request import send_cv_request
+from .comic_vine.utils import build_filter_string
 
 bp = Blueprint('comic', __name__, url_prefix='/comic')
 
 @bp.route('/search', methods=['POST'])
 def index():
     try:
-        data = dict({
-            'api_key': os.environ["COMIC_VINE_API_KEY"],
-            'format': 'json',
-            # Remove this once figured out how to add lists in query params
-            'filter': "name:monstress"
-        })
         search_criteria = request.json
-        headers = requests.utils.default_headers()
 
+        headers = requests.utils.default_headers()
         headers.update(dict({
             'User-Agent': request.headers.get('User-Agent')
         }))
 
         if not search_criteria:
             return jsonify(error="Please provide search criteria, like series title."), 400
-        # TODO: FIgure out how to add lists in query params
-        # data.update(search_criteria)
+        data = {
+            'filter': build_filter_string(search_criteria)
+        }
         
-        r = requests.get('https://comicvine.gamespot.com/api/volumes', params=data, headers=headers)
-        print('### response ',r, r.url, r.headers)
-
-        print('### response json', r.json())
+        r = send_cv_request('/volumes', request.headers.get('User-Agent'), data=data, headers=headers)
 
         if r.ok:
             return jsonify(r.json())
