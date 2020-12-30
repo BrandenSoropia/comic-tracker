@@ -15,9 +15,9 @@ def send_cv_request(endpoint: str, user_agent:str, data: dict[str, any] = None ,
     Prints error if any thrown, but doesn't raise it up. (Should it?)
 
     Keyword arguments:
-    endpoint -- *Required* Specific Comic Vine endpoint to hit
-    data -- Params to be turned into query params
-    headers -- Headers to attach to request. Updates/appends to request library's defaults
+    endpoint -- *Required* Specific Comic Vine endpoint to hit.
+    data -- Params to be turned into query params.
+    headers -- Additional headers to include in request. Updates/appends to request library's defaults.
     user_agent -- *Required* Needed to make the API work since Comic Vine blocks server-side request. Can get a value fro this from http request.
     """
     try:

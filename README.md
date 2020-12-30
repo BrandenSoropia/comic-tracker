@@ -4,6 +4,9 @@ A way to track your favourite Image comics and get notified when a new release i
 
 Follow development here: https://trello.com/b/ohvWVpsP/comic-tracker
 
+Note:
+This is using Comic Vine API. Because of their requirements, I have to "reuse" the request's `User-Agent` to not appear like a web scraper/bot. This seems sketchy/not right, but doing it anyways to get this working.
+
 ## Installation:
 
 > Requires Python3, pip, venv, and sqlite (apparently comes with python3)
